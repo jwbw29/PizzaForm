@@ -9,14 +9,24 @@ const App = () => {
     <>
       <nav className="flex bg-tertiaryColor h-24 items-center justify-between">
         <div className="flex px-4">
-          <Link className="font-headers text-6xl text-dark">BT Pizza</Link>
+          <Link to="/" className="font-headers text-6xl text-dark">
+            BT Pizza
+          </Link>
         </div>
         <div>
-          <Link className="px-4 text-dark">Home</Link>|
-          <Link className="px-4 text-dark">Last Order</Link>
+          <Link to="/" className="px-4 text-dark">
+            Home
+          </Link>
+          |
+          <Link to="confirmation " className="px-4 text-dark">
+            Last Order
+          </Link>
         </div>
       </nav>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="confirmation" element={<Confirmation />} />
+      </Routes>
     </>
   );
 };

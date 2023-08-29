@@ -1,14 +1,24 @@
+import { Routes, Route, Link } from "react-router-dom";
+import Form from "./Form";
+
 export default function Home() {
   return (
-    <div className="flex bg-primaryColor h-screen justify-center">
-      <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-fit w-auto mt-56 justify-around items-center p-8">
-        <h2 className="flex text-center font-headers text-7xl my-8">
-          We let our pizza do the talking!
-        </h2>
-        <button className="rounded-full bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold my-8 hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor">
-          Let's go!
-        </button>
+    <>
+      <div className="flex bg-primaryColor h-screen justify-center">
+        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-fit w-auto mt-56 justify-around items-center p-8">
+          <h2 className="flex text-center font-headers text-7xl my-8">
+            We let our pizza do the talking!
+          </h2>
+          <Link to="pizza-form">
+            <button className="rounded-full bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold my-8 hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor">
+              Let's go!
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
+      <Routes>
+        <Route path="pizza-form" element={<Form />} />
+      </Routes>
+    </>
   );
 }
