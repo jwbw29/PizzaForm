@@ -2,3 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+nav {
+  display: flex;
+  background-color: #f2edeb;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home {
+  background-image: url(../Assets/Pizza.jpg);
+  height: 100vh;
+  width: fill;
+}
