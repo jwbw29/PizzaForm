@@ -126,10 +126,11 @@ const App = () => {
         </div>
       </nav>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route
-          path="/"
+          path="pizza"
           element={
-            <Home
+            <Form
               values={formValues}
               change={inputChange}
               submit={formSubmit}
@@ -138,7 +139,6 @@ const App = () => {
             />
           }
         />
-        <Route path="pizza" element={<Form />} />
         {/* <Route path="confirmation" element={<Confirmation />} /> */}
       </Routes>
     </>

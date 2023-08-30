@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import * as yup from "yup";
 
 export default function Form(props) {
   const { values, change, submit, disabled, errors } = props;
@@ -11,7 +10,9 @@ export default function Form(props) {
 
   const onChange = (evt) => {
     const { name, value, checked, type } = evt.target;
-    const valueToUse = type === "checkbox" || "radio" ? checked : value;
+    const valueToUse =
+      type === "checkbox" || type === "radio" ? checked : value;
+    change(name, valueToUse);
   };
 
   return (
@@ -42,13 +43,16 @@ export default function Form(props) {
                 <div className="h-fit p-4">
                   <input
                     name="name"
-                    // value={values.name}
+                    value={values.name}
                     onChange={onChange}
                     id="name-input"
                     type="text"
                     placeholder="Enter Name"
-                    className="ring-1 pl-1 bg-tertiaryColor rounded-sm h-8"
+                    className="ring-gray-300 ring-1 pl-1 bg-tertiaryColor rounded-sm h-8"
                   />
+                  <div id="name-error" className="text-red-500 text-sm">
+                    {errors.name}
+                  </div>
                 </div>
               </div>
 
@@ -61,9 +65,9 @@ export default function Form(props) {
                   <select
                     name="size"
                     id="size-dropdown"
-                    // value={values.size}
+                    value={values.size}
                     onChange={onChange}
-                    className="ring-1 pl-1
+                    className="ring-1 ring-gray-300 pl-1
                   bg-tertiaryColor rounded-sm h-8"
                   >
                     {" "}
@@ -72,7 +76,9 @@ export default function Form(props) {
                     <option value="medium">12"</option>
                     <option value="large">14"</option>
                   </select>
-                  {/* <div className="text-red-500 text-sm">{errors.size}</div> */}
+                  <div id="size-error" className="text-red-500 text-sm">
+                    {errors.size}
+                  </div>
                 </div>
               </div>
 
@@ -81,15 +87,13 @@ export default function Form(props) {
                 <h2 className="bg-secondaryColor font-comicSans text-xl font-medium pl-2 py-5">
                   *Choose Sauce:
                 </h2>
-
-                {/* ///// SAUCE SELECTIONS ////// */}
                 <div className="flex justify-left h-fit p-4">
                   <div className="flex flex-col pr-8">
                     <div>
                       <input
                         name="red"
-                        // checked={values.red}
-                        // onChange={onChange}
+                        checked={values.sauce}
+                        onChange={onChange}
                         id="red"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -101,8 +105,8 @@ export default function Form(props) {
                     <div>
                       <input
                         name="bbq"
-                        // checked={values.bbq}
-                        // onChange={onChange}
+                        checked={values.sauce}
+                        onChange={onChange}
                         id="bbq"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -114,9 +118,8 @@ export default function Form(props) {
                     <div>
                       <input
                         name="alfredo"
-                        // checked={values.alfredo}
-                        // onChange={onChange}
-
+                        checked={values.sauce}
+                        onChange={onChange}
                         id="alfredo"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -143,9 +146,8 @@ export default function Form(props) {
                       <input
                         name="pepperoni"
                         id="pepperoni"
-                        // checked={values.pepperoni}
-                        // onChange={onChange}
-
+                        checked={values.pepperoni}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -157,9 +159,8 @@ export default function Form(props) {
                       <input
                         name="sausage"
                         id="sausage"
-                        // checked={values.sausage}
-                        // onChange={onChange}
-
+                        checked={values.sausage}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -171,9 +172,8 @@ export default function Form(props) {
                       <input
                         name="bacon"
                         id="bacon"
-                        // checked={values.bacon}
-                        // onChange={onChange}
-
+                        checked={values.bacon}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -185,9 +185,8 @@ export default function Form(props) {
                       <input
                         name="spicy"
                         id="spicy"
-                        // checked={values.spicy}
-                        // onChange={onChange}
-
+                        checked={values.spicy}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -203,9 +202,8 @@ export default function Form(props) {
                       <input
                         name="chicken"
                         id="chicken"
-                        // checked={values.chicken}
-                        // onChange={onChange}
-
+                        checked={values.chicken}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -217,9 +215,8 @@ export default function Form(props) {
                       <input
                         name="peppers"
                         id="peppers"
-                        // checked={values.peppers}
-                        // onChange={onChange}
-
+                        checked={values.peppers}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -231,9 +228,8 @@ export default function Form(props) {
                       <input
                         name="olives"
                         id="olives"
-                        // checked={values.olives}
-                        // onChange={onChange}
-
+                        checked={values.olives}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -245,9 +241,8 @@ export default function Form(props) {
                       <input
                         name="pineapple"
                         id="pineapple"
-                        // checked={values.pineapple}
-                        // onChange={onChange}
-
+                        checked={values.pineapple}
+                        onChange={onChange}
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -268,11 +263,11 @@ export default function Form(props) {
                   <textarea
                     name="special"
                     id="special-text"
-                    // value={value.special}
-                    // onChange={onChange}
+                    value={values.special}
+                    onChange={onChange}
                     type="text"
                     placeholder="Provide any special instructions..."
-                    className="ring-1 h-20 pl-1 bg-tertiaryColor rounded-sm w-full"
+                    className="ring-1 ring-gray-300 h-20 pl-1 bg-tertiaryColor rounded-sm w-full"
                   />
                 </div>
               </div>
@@ -284,7 +279,7 @@ export default function Form(props) {
                   <button
                     disabled={disabled}
                     id="order-button"
-                    className="disabled:text-white disabled:bg-gray-300 mt-2 rounded-lg bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor "
+                    className="disabled:text-white disabled:bg-gray-300 disabled:ring-0 mt-2 rounded-lg bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor "
                   >
                     Place Order
                   </button>
