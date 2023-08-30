@@ -10,7 +10,8 @@ module.exports = {
       dark: "#171717",
     },
     fontFamily: {
-      headers: ["Qwitcher Grypen", "cursive"],
+      logo: ["Qwitcher Grypen", "cursive"],
+      modal: ["Caprasimo", "cursive"],
     },
   },
   plugins: [],
