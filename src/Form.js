@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import * as yup from "yup";
 
 export default function Form(props) {
   const { values, change, submit, disabled, errors } = props;
@@ -282,9 +283,7 @@ export default function Form(props) {
                 <Link to="/confirmation">
                   <button
                     disabled={disabled}
-                    type="submit"
                     id="order-button"
-                    name="order-button"
                     className="disabled:text-white disabled:bg-gray-300 mt-2 rounded-lg bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor "
                   >
                     Place Order

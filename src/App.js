@@ -11,9 +11,7 @@ import schema from "./FormSchema";
 const initialFormValues = {
   name: "",
   size: "",
-  red: true,
-  bbq: false,
-  alfredo: false,
+  sauce: false,
   pepperoni: false,
   sausage: false,
   bacon: false,
@@ -28,9 +26,7 @@ const initialFormValues = {
 const initialFormErrors = {
   name: "",
   size: "",
-  red: false,
-  bbq: false,
-  alfredo: false,
+  sauce: false,
   pepperoni: false,
   sausage: false,
   bacon: false,
@@ -88,9 +84,7 @@ const App = () => {
     const newOrder = {
       name: formValues.name.trim(),
       size: formValues.size,
-      red: formValues.red,
-      bbq: formValues.bbq,
-      alfredo: formValues.alfredo,
+      sauce: formValues.sauce,
       pepperoni: formValues.pepperoni,
       sausage: formValues.sausage,
       bacon: formValues.bacon,
