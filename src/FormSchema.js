@@ -14,7 +14,7 @@ const formSchema = yup.object().shape({
   peppers: yup.boolean(),
   olives: yup.boolean(),
   pineapple: yup.boolean(),
-  special-text: yup.string().max(50, "Instructions must be less than 50 characters"),
+  special: yup.string().max(50, "Instructions must be less than 50 characters"),
 });
 
 export default formSchema;

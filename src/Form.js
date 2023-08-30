@@ -265,9 +265,9 @@ export default function Form(props) {
                 </h2>
                 <div className="h-fit p-4">
                   <textarea
-                    name="special-text"
+                    name="special"
                     id="special-text"
-                    // value={value.special-text}
+                    // value={value.special}
                     // onChange={onChange}
                     type="text"
                     placeholder="Provide any special instructions..."
@@ -281,7 +281,7 @@ export default function Form(props) {
                 <p className="mb-2 font-bold text-xl">Total: $19.99</p>
                 <Link to="/confirmation">
                   <button
-                    disabled
+                    disabled={disabled}
                     type="submit"
                     id="order-button"
                     name="order-button"

@@ -22,7 +22,7 @@ const initialFormValues = {
   peppers: false,
   olives: false,
   pineapple: false,
-  special-text: "",
+  special: "",
 };
 
 const initialFormErrors = {
@@ -39,7 +39,7 @@ const initialFormErrors = {
   peppers: false,
   olives: false,
   pineapple: false,
-  special-text: "",
+  special: "",
 };
 
 const initialOrders = [];
@@ -99,7 +99,7 @@ const App = () => {
       peppers: formValues.peppers,
       olives: formValues.olives,
       pineapple: formValues.pineapple,
-      special-text: formValues.special-text.trim(),
+      special: formValues.special.trim(),
     };
     postNewOrder(newOrder);
   };
