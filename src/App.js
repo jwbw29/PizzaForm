@@ -22,7 +22,7 @@ const initialFormValues = {
   peppers: false,
   olives: false,
   pineapple: false,
-  special: "",
+  special-text: "",
 };
 
 const initialFormErrors = {
@@ -39,7 +39,7 @@ const initialFormErrors = {
   peppers: false,
   olives: false,
   pineapple: false,
-  special: "",
+  special-text: "",
 };
 
 const initialOrders = [];
@@ -99,7 +99,7 @@ const App = () => {
       peppers: formValues.peppers,
       olives: formValues.olives,
       pineapple: formValues.pineapple,
-      special: formValues.special.trim(),
+      special-text: formValues.special-text.trim(),
     };
     postNewOrder(newOrder);
   };
@@ -132,7 +132,18 @@ const App = () => {
         </div>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              values={formValues}
+              change={inputChange}
+              submit={formSubmit}
+              disabled={disabled}
+              errors={formErrors}
+            />
+          }
+        />
         <Route path="pizza" element={<Form />} />
         {/* <Route path="confirmation" element={<Confirmation />} /> */}
       </Routes>

@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 
-export default function Form() {
+export default function Form(props) {
+  const { values, change, submit, disabled, errors } = props;
+
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    submit();
+  };
+
+  const onChange = (evt) => {
+    const { name, value, checked, type } = evt.target;
+    const valueToUse = type === "checkbox" || "radio" ? checked : value;
+  };
+
   return (
     <>
       <div className="flex bg-primaryColor h-fit justify-center">
@@ -17,7 +29,7 @@ export default function Form() {
           {/* ////// FORM BODY/////// */}
           <div className="flex flex-col w-full">
             {/* ///// FORM CONTENT /////// */}
-            <form id="pizza-form" className="flex flex-col">
+            <form id="pizza-form" onSubmit={onSubmit} className="flex flex-col">
               {/* ////// WHO FOR? /////// */}
               <div className="flex flex-col">
                 <h2
@@ -29,6 +41,8 @@ export default function Form() {
                 <div className="h-fit p-4">
                   <input
                     name="name"
+                    // value={values.name}
+                    onChange={onChange}
                     id="name-input"
                     type="text"
                     placeholder="Enter Name"
@@ -46,6 +60,8 @@ export default function Form() {
                   <select
                     name="size"
                     id="size-dropdown"
+                    // value={values.size}
+                    onChange={onChange}
                     className="ring-1 pl-1
                   bg-tertiaryColor rounded-sm h-8"
                   >
@@ -55,6 +71,7 @@ export default function Form() {
                     <option value="medium">12"</option>
                     <option value="large">14"</option>
                   </select>
+                  {/* <div className="text-red-500 text-sm">{errors.size}</div> */}
                 </div>
               </div>
 
@@ -70,6 +87,8 @@ export default function Form() {
                     <div>
                       <input
                         name="red"
+                        // checked={values.red}
+                        // onChange={onChange}
                         id="red"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -81,6 +100,8 @@ export default function Form() {
                     <div>
                       <input
                         name="bbq"
+                        // checked={values.bbq}
+                        // onChange={onChange}
                         id="bbq"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -92,6 +113,9 @@ export default function Form() {
                     <div>
                       <input
                         name="alfredo"
+                        // checked={values.alfredo}
+                        // onChange={onChange}
+
                         id="alfredo"
                         type="radio"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
@@ -118,6 +142,9 @@ export default function Form() {
                       <input
                         name="pepperoni"
                         id="pepperoni"
+                        // checked={values.pepperoni}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -129,6 +156,9 @@ export default function Form() {
                       <input
                         name="sausage"
                         id="sausage"
+                        // checked={values.sausage}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -140,6 +170,9 @@ export default function Form() {
                       <input
                         name="bacon"
                         id="bacon"
+                        // checked={values.bacon}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -151,6 +184,9 @@ export default function Form() {
                       <input
                         name="spicy"
                         id="spicy"
+                        // checked={values.spicy}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -166,6 +202,9 @@ export default function Form() {
                       <input
                         name="chicken"
                         id="chicken"
+                        // checked={values.chicken}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -177,6 +216,9 @@ export default function Form() {
                       <input
                         name="peppers"
                         id="peppers"
+                        // checked={values.peppers}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -188,6 +230,9 @@ export default function Form() {
                       <input
                         name="olives"
                         id="olives"
+                        // checked={values.olives}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -199,6 +244,9 @@ export default function Form() {
                       <input
                         name="pineapple"
                         id="pineapple"
+                        // checked={values.pineapple}
+                        // onChange={onChange}
+
                         type="checkbox"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
@@ -219,6 +267,8 @@ export default function Form() {
                   <textarea
                     name="special-text"
                     id="special-text"
+                    // value={value.special-text}
+                    // onChange={onChange}
                     type="text"
                     placeholder="Provide any special instructions..."
                     className="ring-1 h-20 pl-1 bg-tertiaryColor rounded-sm w-full"
