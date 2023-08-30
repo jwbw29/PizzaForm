@@ -7,7 +7,7 @@ import Confirmation from "./Confirmation";
 const App = () => {
   return (
     <>
-      <nav className="flex bg-tertiaryColor h-24 items-center justify-between">
+      <nav className="flex bg-tertiaryColor h-24 items-center justify-between fixed w-full">
         <div className="flex px-4">
           <Link to="/" className="font-logo text-6xl text-dark">
             BT Pizza

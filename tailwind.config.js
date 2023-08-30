@@ -12,6 +12,7 @@ module.exports = {
     fontFamily: {
       logo: ["Qwitcher Grypen", "cursive"],
       modal: ["Caprasimo", "cursive"],
+      comicSans: ["Comic Sans MS", "Comic Sans", "cursive"],
     },
   },
   plugins: [],
