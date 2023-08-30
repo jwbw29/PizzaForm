@@ -79,10 +79,39 @@ const App = () => {
       .catch((err) => setFormErrors({ ...formErrors, [name]: err.errors[0] }));
   };
 
+  const inputChange = (name, value) => {
+    validate(name, value);
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const formSubmit = () => {
+    const newOrder = {
+      name: formValues.name.trim(),
+      size: formValues.size,
+      red: formValues.red,
+      bbq: formValues.bbq,
+      alfredo: formValues.alfredo,
+      pepperoni: formValues.pepperoni,
+      sausage: formValues.sausage,
+      bacon: formValues.bacon,
+      spicy: formValues.spicy,
+      chicken: formValues.chicken,
+      peppers: formValues.peppers,
+      olives: formValues.olives,
+      pineapple: formValues.pineapple,
+      special: formValues.special.trim(),
+    };
+    postNewOrder(newOrder);
+  };
+
   ////// SIDE EFFECTS //////
   useEffect(() => {
     getOrders();
   }, []);
+
+  useEffect(() => {
+    schema.isValid(formValues).then((valid) => setDisabled(!valid));
+  }, [formValues]);
 
   return (
     <>
