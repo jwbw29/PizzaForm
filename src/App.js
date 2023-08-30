@@ -4,7 +4,26 @@ import Home from "./Home";
 import Form from "./Form";
 import Confirmation from "./Confirmation";
 
+///////// INITIAL STATES /////////
+const initialFormValues = {
+  name: "",
+  size: "",
+  sauce: true,
+  toppings: "",
+  special: "",
+};
+
+////////
+
 const App = () => {
+  //// STATES /////
+
+  //// HELPERS /////
+
+  ///// EVENT HANDLERS /////
+
+  ////// SIDE EFFECTS //////
+
   return (
     <>
       <nav className="flex bg-tertiaryColor h-24 items-center justify-between fixed w-full">
@@ -17,16 +36,16 @@ const App = () => {
           <Link to="/" className="px-4 text-dark font-modal text-xl">
             Home
           </Link>
-          {/* |
-          <Link to="confirmation " className="px-4 text-dark">
-            Last Order
-          </Link> */}
+          |
+          <Link to="pizza " className="px-4 text-dark font-modal text-xl">
+            Order
+          </Link>
         </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="pizza" element={<Form />} />
-        <Route path="confirmation" element={<Confirmation />} />
+        {/* <Route path="confirmation" element={<Confirmation />} /> */}
       </Routes>
     </>
   );

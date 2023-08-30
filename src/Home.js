@@ -9,7 +9,7 @@ export default function Home() {
           <h2 className="flex text-center font-modal text-4xl">
             We let our pizza do the talking!
           </h2>
-          <Link to="pizza">
+          <Link to="/pizza">
             <button
               id="order-pizza"
               className="rounded-full bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor"
