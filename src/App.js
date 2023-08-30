@@ -1,28 +1,88 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Form from "./Form";
 import Confirmation from "./Confirmation";
+import axios from "axios";
+import * as yup from "yup";
+import schema from "./FormSchema";
 
 ///////// INITIAL STATES /////////
 const initialFormValues = {
   name: "",
   size: "",
-  sauce: true,
-  toppings: "",
+  red: true,
+  bbq: false,
+  alfredo: false,
+  pepperoni: false,
+  sausage: false,
+  bacon: false,
+  spicy: false,
+  chicken: false,
+  peppers: false,
+  olives: false,
+  pineapple: false,
   special: "",
 };
 
-////////
+const initialFormErrors = {
+  name: "",
+  size: "",
+  red: false,
+  bbq: false,
+  alfredo: false,
+  pepperoni: false,
+  sausage: false,
+  bacon: false,
+  spicy: false,
+  chicken: false,
+  peppers: false,
+  olives: false,
+  pineapple: false,
+  special: "",
+};
+
+const initialOrders = [];
+const initialDisabled = true;
 
 const App = () => {
   //// STATES /////
+  const [orders, setOrders] = useState(initialOrders);
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   //// HELPERS /////
+  const getOrders = () => {
+    axios
+      .get("https://reqres.in/api/orders")
+      .then((res) => {
+        setOrders(res.data.data);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const postNewOrder = (newOrder) => {
+    axios
+      .post("https://reqres.in/api/orders")
+      .then((res) => setOrders([newOrder, ...orders]))
+      .catch((err) => console.error(err))
+      .finally(() => setFormValues(initialFormValues));
+  };
 
   ///// EVENT HANDLERS /////
+  const validate = (name, value) => {
+    yup
+      .reach(schema, name)
+      .validate(value)
+      .then(() => setFormErrors({ ...formErrors, [name]: "" }))
+      .catch((err) => setFormErrors({ ...formErrors, [name]: err.errors[0] }));
+  };
 
   ////// SIDE EFFECTS //////
+  useEffect(() => {
+    getOrders();
+  }, []);
 
   return (
     <>

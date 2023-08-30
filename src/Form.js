@@ -51,9 +51,9 @@ export default function Form() {
                   >
                     {" "}
                     <option value="">---Select a Size---</option>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
+                    <option value="small">10"</option>
+                    <option value="medium">12"</option>
+                    <option value="large">14"</option>
                   </select>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function Form() {
                   *Choose Sauce:
                 </h2>
 
-                {/* ///// TOPPING SELECTIONS ////// */}
+                {/* ///// SAUCE SELECTIONS ////// */}
                 <div className="flex justify-left h-fit p-4">
                   <div className="flex flex-col pr-8">
                     <div>
@@ -107,7 +107,7 @@ export default function Form() {
               {/* ////// CHOOSE TOPPINGS /////// */}
               <div className="flex flex-col">
                 <h2 className="bg-secondaryColor font-comicSans text-xl font-medium pl-2 py-5">
-                  *Choose Toppings:
+                  Choose Toppings:
                 </h2>
 
                 {/* ///// TOPPING SELECTIONS ////// */}
