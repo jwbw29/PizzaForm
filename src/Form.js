@@ -10,9 +10,9 @@ export default function Form(props) {
 
   const onChange = (evt) => {
     const { name, value, checked, type } = evt.target;
-    const valueToUse =
-      type === "checkbox" || type === "radio" ? checked : value;
+    const valueToUse = type === "checkbox" ? checked : value;
     change(name, valueToUse);
+    console.log(values.sauce);
   };
 
   return (
@@ -91,11 +91,12 @@ export default function Form(props) {
                   <div className="flex flex-col pr-8">
                     <div>
                       <input
-                        name="red"
-                        checked={values.sauce}
+                        name="sauce"
+                        checked={values.sauce === "red"}
                         onChange={onChange}
                         id="red"
                         type="radio"
+                        value="red"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
                       <label className="pl-5" for="red">
@@ -104,11 +105,12 @@ export default function Form(props) {
                     </div>
                     <div>
                       <input
-                        name="bbq"
-                        checked={values.sauce}
+                        name="sauce"
+                        checked={values.sauce === "bbq"}
                         onChange={onChange}
                         id="bbq"
                         type="radio"
+                        value="bbq"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
                       <label className="pl-5" for="bbq">
@@ -117,11 +119,12 @@ export default function Form(props) {
                     </div>
                     <div>
                       <input
-                        name="alfredo"
-                        checked={values.sauce}
+                        name="sauce"
+                        checked={values.sauce === "alfredo"}
                         onChange={onChange}
                         id="alfredo"
                         type="radio"
+                        value="alfredo"
                         className="border pl-1 bg-tertiaryColor rounded-sm"
                       />
                       <label className="pl-5" for="alfredo">

@@ -11,7 +11,7 @@ import schema from "./FormSchema";
 const initialFormValues = {
   name: "",
   size: "",
-  sauce: false,
+  sauce: "",
   pepperoni: false,
   sausage: false,
   bacon: false,
@@ -26,7 +26,7 @@ const initialFormValues = {
 const initialFormErrors = {
   name: "",
   size: "",
-  sauce: false,
+  sauce: "",
   pepperoni: false,
   sausage: false,
   bacon: false,

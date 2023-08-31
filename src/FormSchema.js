@@ -3,7 +3,10 @@ import * as yup from "yup";
 const formSchema = yup.object().shape({
   name: yup.string().required().min(2, "name must be at least 2 characters"),
   size: yup.string().required("Please select a size"),
-  sauce: yup.boolean(),
+  sauce: yup
+    .string()
+    .required()
+    .oneOf(["red", "bbq", "alfredo"], "Please choose at least one option"),
   pepperoni: yup.boolean(),
   sausage: yup.boolean(),
   bacon: yup.boolean(),
