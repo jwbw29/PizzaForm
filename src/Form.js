@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Form(props) {
   const { values, change, submit, disabled, errors } = props;
+  const navigate = useNavigate();
 
   const onSubmit = (evt) => {
     evt.preventDefault();
+    navigate("/confirmation");
     submit();
   };
 
@@ -12,7 +14,6 @@ export default function Form(props) {
     const { name, value, checked, type } = evt.target;
     const valueToUse = type === "checkbox" ? checked : value;
     change(name, valueToUse);
-    console.log(values.sauce);
   };
 
   return (
@@ -278,15 +279,16 @@ export default function Form(props) {
               {/* /////// ORDER BUTTON /////// */}
               <div className="flex flex-col items-end h-fit p-8">
                 <p className="mb-2 font-bold text-xl">Total: $19.99</p>
-                <Link to="/confirmation">
-                  <button
-                    disabled={disabled}
-                    id="order-button"
-                    className="disabled:text-white disabled:bg-gray-300 disabled:ring-0 mt-2 rounded-lg bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor "
-                  >
-                    Place Order
-                  </button>
-                </Link>
+                {/* <Link to="/confirmation"> */}
+                <button
+                  disabled={disabled}
+                  id="order-button"
+                  onClick={onSubmit}
+                  className="disabled:text-white disabled:bg-gray-300 disabled:ring-0 mt-2 rounded-lg bg-primaryColor h-14 w-36 text-xl text-tertiaryColor font-bold hover:bg-tertiaryColor hover:ring-2 hover:ring-primaryColor hover:text-primaryColor "
+                >
+                  Place Order
+                </button>
+                {/* </Link> */}
               </div>
             </form>
           </div>

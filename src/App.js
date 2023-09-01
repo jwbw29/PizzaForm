@@ -49,18 +49,18 @@ const App = () => {
   const [disabled, setDisabled] = useState(initialDisabled);
 
   //// HELPERS /////
-  const getOrders = () => {
-    axios
-      .get("https://reqres.in/api/orders")
-      .then((res) => {
-        setOrders(res.data.data);
-      })
-      .catch((err) => console.error(err));
-  };
+  // const getOrders = () => {
+  //   axios
+  //     .get("https://reqres.in/api/orders")
+  //     .then((res) => {
+  //       setOrders(res.data.data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   const postNewOrder = (newOrder) => {
     axios
-      .post("https://reqres.in/api/orders")
+      .post("https://reqres.in/api/orders", newOrder)
       .then((res) => setOrders([newOrder, ...orders]))
       .catch((err) => console.error(err))
       .finally(() => setFormValues(initialFormValues));
@@ -99,9 +99,9 @@ const App = () => {
   };
 
   ////// SIDE EFFECTS //////
-  useEffect(() => {
-    getOrders();
-  }, []);
+  // useEffect(() => {
+  //   getOrders();
+  // }, []);
 
   useEffect(() => {
     schema.isValid(formValues).then((valid) => setDisabled(!valid));
