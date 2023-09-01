@@ -14,6 +14,9 @@ module.exports = {
         modal: ["Caprasimo", "cursive"],
         comicSans: ["Comic Sans MS", "Comic Sans", "cursive"],
       },
+      width: {
+        confirm: "600px",
+      },
     },
   },
   plugins: [],

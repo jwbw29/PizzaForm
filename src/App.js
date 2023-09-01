@@ -139,7 +139,7 @@ const App = () => {
             />
           }
         />
-        {/* <Route path="confirmation" element={<Confirmation />} /> */}
+        <Route path="confirmation" element={<Confirmation />} />
       </Routes>
     </>
   );
