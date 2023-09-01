@@ -4,8 +4,8 @@ import Form from "./Form";
 export default function Home() {
   return (
     <>
-      <div className="flex bg-primaryColor h-screen justify-center">
-        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-96 w-auto mt-56 justify-around items-center p-8">
+      <div className="flex bg-primaryColor h-screen justify-center items-center">
+        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-96 w-auto justify-around items-center p-8">
           <h2 className="flex text-center font-modal text-4xl">
             We let our pizza do the talking!
           </h2>
