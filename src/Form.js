@@ -19,7 +19,7 @@ export default function Form(props) {
     <>
       <div className="flex bg-primaryColor h-fit justify-center">
         {/* ///// MODAL //////// */}
-        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-fit mb-56 mt-56 justify-around items-center">
+        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-fit my-40 justify-around items-center">
           {/*//// FORM HEADER //// */}
           <div className="flex flex-col w-full h-fit">
             <h2 className="text-center font-modal text-3xl py-4">
