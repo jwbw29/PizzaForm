@@ -5,3 +5,4 @@
 - [x] Make post results show up on confirmation page
 - [x] Build confirmation page UI
 - [ ] Cypress Testing
+  - Use [code from user-onboarding](https://github.com/jwbw29/user-onboarding/blob/main/cypress/e2e/spec.cy.js)
