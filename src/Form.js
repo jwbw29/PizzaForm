@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import pizzaLogo from "./Pizza.jpg";
 
 export default function Form(props) {
   const { values, change, submit, disabled, errors } = props;
@@ -26,7 +27,7 @@ export default function Form(props) {
             <h2 className="text-center font-modal text-3xl py-4">
               Build Your Own Pizza
             </h2>
-            <img src="./Pizza.jpg" alt="pizza" className="w-full h-56" />
+            <img src={pizzaLogo} alt="pizza" className="w-full h-56" />
           </div>
 
           {/* ////// FORM BODY/////// */}
