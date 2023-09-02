@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/PizzaForm/static/css/main.94cef3e2.css",
-    "main.js": "/PizzaForm/static/js/main.fa35e04d.js",
+    "main.js": "/PizzaForm/static/js/main.3dcd238c.js",
+    "static/media/Pizza.jpg": "/PizzaForm/static/media/Pizza.bf28655bb889dfecc517.jpg",
     "index.html": "/PizzaForm/index.html",
     "main.94cef3e2.css.map": "/PizzaForm/static/css/main.94cef3e2.css.map",
-    "main.fa35e04d.js.map": "/PizzaForm/static/js/main.fa35e04d.js.map"
+    "main.3dcd238c.js.map": "/PizzaForm/static/js/main.3dcd238c.js.map"
   },
   "entrypoints": [
     "static/css/main.94cef3e2.css",
-    "static/js/main.fa35e04d.js"
+    "static/js/main.3dcd238c.js"
   ]
 }
