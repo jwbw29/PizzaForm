@@ -111,13 +111,13 @@ const App = () => {
     <>
       <nav className="flex bg-tertiaryColor h-24 items-center justify-between fixed w-full">
         <div className="flex px-4" id="logo">
-          <Link to="/PizzaForm" className="font-logo text-6xl text-dark">
+          <Link to="/" className="font-logo text-6xl text-dark">
             BT Pizza
           </Link>
         </div>
         <div>
           <Link
-            to="/PizzaForm"
+            to="/"
             id="home-link"
             className="px-4 text-dark font-modal text-xl"
           >
@@ -134,7 +134,7 @@ const App = () => {
         </div>
       </nav>
       <Routes>
-        <Route path="/PizzaForm" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="pizza"
           element={

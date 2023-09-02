@@ -1,9 +1,14 @@
 # Left to do
 
+## BUGS
+- [ ] jwbw29.github.io/PizzaForm doesn't load, and wnen I click on the Home routes it takes me to jwbw29.github.io with no project name
+- [ ] pizza logo not showing up on form page
+
 ## EXTRA
 - [ ] Fix the flex UI so that the body fills the space below the nav bar, not the entire page
 - [ ] Finish testing -- notes are in the file
-- [ ] Deploy to website
+- [x] Deploy to website
+
 
 ## MVP
 
