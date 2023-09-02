@@ -5,8 +5,11 @@ export default function Home() {
   return (
     <>
       <div className="flex bg-primaryColor h-screen justify-center items-center">
-        <div className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-96 w-auto justify-around items-center p-8">
-          <h2 className="flex text-center font-modal text-4xl">
+        <div
+          id="welcome-modal"
+          className="flex flex-col bg-tertiaryColor ring-secondaryColor ring-4 rounded-md h-96 w-auto justify-around items-center p-8"
+        >
+          <h2 id="slogan" className="flex text-center font-modal text-4xl">
             We let our pizza do the talking!
           </h2>
           <Link to="/pizza">

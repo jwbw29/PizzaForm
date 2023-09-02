@@ -279,7 +279,6 @@ export default function Form(props) {
               {/* /////// ORDER BUTTON /////// */}
               <div className="flex flex-col items-end h-fit p-8">
                 <p className="mb-2 font-bold text-xl">Total: $19.99</p>
-                {/* <Link to="/confirmation"> */}
                 <button
                   disabled={disabled}
                   id="order-button"
@@ -288,7 +287,6 @@ export default function Form(props) {
                 >
                   Place Order
                 </button>
-                {/* </Link> */}
               </div>
             </form>
           </div>

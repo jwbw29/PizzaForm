@@ -110,17 +110,25 @@ const App = () => {
   return (
     <>
       <nav className="flex bg-tertiaryColor h-24 items-center justify-between fixed w-full">
-        <div className="flex px-4">
+        <div className="flex px-4" id="logo">
           <Link to="/" className="font-logo text-6xl text-dark">
             BT Pizza
           </Link>
         </div>
         <div>
-          <Link to="/" className="px-4 text-dark font-modal text-xl">
+          <Link
+            to="/"
+            id="home-link"
+            className="px-4 text-dark font-modal text-xl"
+          >
             Home
           </Link>
           |
-          <Link to="pizza " className="px-4 text-dark font-modal text-xl">
+          <Link
+            to="pizza "
+            id="order-link"
+            className="px-4 text-dark font-modal text-xl"
+          >
             Order
           </Link>
         </div>
