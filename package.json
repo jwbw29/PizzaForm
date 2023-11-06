@@ -1,6 +1,5 @@
 {
   "name": "lambda-eats",
-  "homepage": "https://jwbw29.github.io/PizzaForm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
